@@ -14,3 +14,7 @@ hs_err_pid*
 # IDEA files
 .idea/
 *.iml
+
+# compiled files
+out/
+*/out
