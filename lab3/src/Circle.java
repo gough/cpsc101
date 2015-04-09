@@ -1,16 +1,15 @@
-public class Circle {
+import java.util.Random;
+
+public class Circle implements Comparable<Circle>, Cloneable {
     private Double radius;
+    private static Random random;
 
     public Circle(Double radius) {
         this.setRadius(radius);
     }
 
-    public Circle(int radius) {
-        this.setRadius(Double.valueOf(radius));
-    }
-
     public Circle() {
-        throw new IllegalArgumentException("Must supply radius when creating a circle");
+        this.setRadius(random.nextDouble());
     }
 
     public Double getRadius() {
@@ -44,6 +43,13 @@ public class Circle {
     @Override
     public int hashCode() {
         return radius.hashCode();
+    }
+
+    @Override
+    public int compareTo(Circle circle) {
+        if (circle.radius > this.getRadius()) return -1;
+        if (circle.radius == this.getRadius()) return 0;
+        return 1;
     }
 }
 
