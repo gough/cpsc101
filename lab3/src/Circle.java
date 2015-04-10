@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Circle implements Comparable<Circle>, Cloneable {
     private Double radius;
-    private static Random random;
+    private static Random random = new Random();
 
     public Circle(Double radius) {
         this.setRadius(radius);
